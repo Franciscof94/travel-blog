@@ -1,6 +1,6 @@
+import React from "react";
 import { Box, Typography } from "@material-ui/core";
 import { Grid } from "@mui/material";
-import React from "react";
 import TravelsCard from "../components/TravelsCard";
 import data from "../data/data";
 
@@ -25,5 +25,6 @@ const Travels = () => {
     </Box>
   );
 };
+
 
 export default Travels;
