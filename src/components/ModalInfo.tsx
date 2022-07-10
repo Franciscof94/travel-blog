@@ -9,6 +9,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import { actionCreators } from "../store";
 import { bindActionCreators } from "redux";
 import data from "../data/data";
+import { numberOfLetters } from "../Helpers/helpers";
+import { useResize } from "../Hooks/useResize";
 
 const style = {
   position: "absolute" as "absolute",
@@ -26,11 +28,12 @@ const style = {
 const ModalInfo = () => {
   const dispatch = useDispatch();
 
+  const { isPhone } = useResize();
+
   const { modal, id } = useSelector((state: RootState) => state.modal);
   const { showModal } = bindActionCreators(actionCreators, dispatch);
 
   const card = data.filter((card) => card.id === id);
-  console.log(card);
 
   return (
     <>
@@ -58,16 +61,19 @@ const ModalInfo = () => {
               alt="green iguana"
             />
             <Box m={4}>
-              <Typography
-                id="modal-modal-title"
-                variant="h4"
-                component="h2"
-              >
+              <Typography id="modal-modal-title" variant="h4" component="h2">
                 {cardInfo.title}
               </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                {cardInfo.description}
-              </Typography>
+              <Box
+                sx={{
+                  maxHeight: isPhone ? "17vh" : null,
+                  overflowY: isPhone ? "scroll" : "hidden",
+                }}
+              >
+                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                  {cardInfo.description}
+                </Typography>
+              </Box>
             </Box>
           </Box>
         </Modal>

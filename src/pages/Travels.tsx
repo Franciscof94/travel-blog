@@ -14,7 +14,7 @@ const Travels = () => {
   return (
     <Box
       sx={{
-        color: "red",
+        color: "black",
       }}
     >
       <Typography className={classes.title} variant="h2">

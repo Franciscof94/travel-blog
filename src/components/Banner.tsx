@@ -2,16 +2,18 @@ import React from "react";
 import Box from "@mui/material/Box";
 import BannerImage from "../assets/banner.jpg";
 import { makeStyles } from "@material-ui/core";
-import Typography from '@mui/material/Typography';
+import Typography from "@mui/material/Typography";
+import { useResize } from "../Hooks/useResize";
 
 const Banner = () => {
   const classes = useStyles();
+  const { isPhone } = useResize();
 
   return (
     <Box
       sx={{
         padding: 0,
-        minHeight: "65vh",
+        minHeight: isPhone ? "45vh" : "65vh",
         margin: 0,
         zIndex: -1,
         backgroundRepeat: "no-repeat",
@@ -23,7 +25,9 @@ const Banner = () => {
         justifyContent: "center",
       }}
     >
-      <Typography variant="h2" className={classes.title}>LOS VIAJES DE LA CHINITA</Typography>
+      <Typography variant="h2" className={classes.title}>
+        LOS VIAJES DE LA CHINITA
+      </Typography>
       <div className={classes.fadeBottom}></div>
     </Box>
   );
