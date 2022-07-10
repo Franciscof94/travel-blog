@@ -2,6 +2,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 import BannerImage from "../assets/banner.jpg";
 import { makeStyles } from "@material-ui/core";
+import Typography from '@mui/material/Typography';
 
 const Banner = () => {
   const classes = useStyles();
@@ -22,7 +23,7 @@ const Banner = () => {
         justifyContent: "center",
       }}
     >
-      <h1 className={classes.title}>LOS VIAJES DE LA CHINITA</h1>
+      <Typography variant="h2" className={classes.title}>LOS VIAJES DE LA CHINITA</Typography>
       <div className={classes.fadeBottom}></div>
     </Box>
   );
@@ -30,11 +31,10 @@ const Banner = () => {
 
 const useStyles = makeStyles((theme) => ({
   title: {
-    color: "#4a65f3f2",
+    color: "white",
     zIndex: 555,
-    fontSize: "5rem",
-    letterSpacing: "0.5rem",
-    fontfamily: "'Koulen', cursive",
+    fontSize: "4rem",
+    letterSpacing: "0.4rem",
     position: "relative",
   },
   fadeBottom: {

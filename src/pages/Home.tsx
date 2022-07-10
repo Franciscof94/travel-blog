@@ -5,6 +5,7 @@ import AboutMe from "../components/AboutMe";
 
 const Home = () => {
   const classes = useStyles();
+  
   return (
     <div>
       <div className={classes.banner}>
