@@ -15,6 +15,7 @@ const Travels = () => {
     <Box
       sx={{
         color: "black",
+        
       }}
     >
       <Typography className={classes.title} variant="h2">
@@ -38,6 +39,7 @@ const Travels = () => {
 const useStyles = makeStyles((theme) => ({
   title: {
     margin: "2.2rem 0",
+    textAlign: 'center'
   },
 }));
 

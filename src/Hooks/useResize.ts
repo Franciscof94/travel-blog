@@ -3,11 +3,11 @@ import { useState } from "react";
 
 export const useResize = () => {
   const [isPhone, setIsPhone] = useState(
-    window.innerWidth < 700 ? true : false
+    window.innerWidth < 900 ? true : false
   );
 
   const handleResize = () => {
-    if (window.innerWidth < 700) {
+    if (window.innerWidth < 900) {
       setIsPhone(true);
     } else {
       setIsPhone(false);
