@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
-export const useResize = () => {
-  const [isPhone, setIsPhone] = useState(
+
+export const useResize = (): boolean=> {
+  const [isPhone, setIsPhone] = useState<boolean>(
     window.innerWidth < 900 ? true : false
   );
 
@@ -20,5 +21,5 @@ export const useResize = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return { isPhone };
+  return  isPhone ;
 };

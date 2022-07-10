@@ -8,7 +8,9 @@ import { useResize } from "../Hooks/useResize";
 
 const AboutMe = () => {
   const classes = useStyles();
-  const { isPhone } = useResize();
+  const isPhone =  useResize();
+  console.log(isPhone)
+
   return (
     <Box>
       <Typography className={classes.title} variant="h2" component="h4">

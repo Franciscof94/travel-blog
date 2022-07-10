@@ -7,7 +7,7 @@ import { useResize } from "../Hooks/useResize";
 
 const Banner = () => {
   const classes = useStyles();
-  const { isPhone } = useResize();
+  const  isPhone  = useResize();
 
   return (
     <Box

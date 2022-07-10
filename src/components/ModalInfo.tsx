@@ -11,6 +11,7 @@ import { bindActionCreators } from "redux";
 import data from "../data/data";
 import { numberOfLetters } from "../Helpers/helpers";
 import { useResize } from "../Hooks/useResize";
+import { makeStyles } from "@material-ui/core";
 
 const style = {
   position: "absolute" as "absolute",
@@ -27,14 +28,13 @@ const style = {
 
 const ModalInfo = () => {
   const dispatch = useDispatch();
-
-  const { isPhone } = useResize();
+  const classes = useStyles();
 
   const { modal, id } = useSelector((state: RootState) => state.modal);
   const { showModal } = bindActionCreators(actionCreators, dispatch);
 
   const card = data.filter((card) => card.id === id);
-
+  const isPhone = useResize();
   return (
     <>
       {card.map((cardInfo) => (
@@ -56,9 +56,9 @@ const ModalInfo = () => {
             />
             <CardMedia
               component="img"
-              height="320"
               image={cardInfo.img}
               alt="green iguana"
+              className={classes.cardMedia}
             />
             <Box m={4}>
               <Typography id="modal-modal-title" variant="h4" component="h2">
@@ -81,5 +81,14 @@ const ModalInfo = () => {
     </>
   );
 };
+
+const useStyles = makeStyles((theme) => ({
+  cardMedia: {
+    height: "320px",
+    [theme.breakpoints.down(768)]: {
+      height: "240px",
+    },
+  },
+}));
 
 export default ModalInfo;
