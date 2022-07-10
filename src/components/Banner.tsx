@@ -25,7 +25,7 @@ const Banner = () => {
         justifyContent: "center",
       }}
     >
-      <Typography variant="h2" className={classes.title}>
+      <Typography variant={isPhone ? "h4" : "h2"} className={classes.title}>
         LOS VIAJES DE LA CHINITA
       </Typography>
       <div className={classes.fadeBottom}></div>

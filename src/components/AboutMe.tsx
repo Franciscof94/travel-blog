@@ -31,7 +31,7 @@ const AboutMe = () => {
         <Grid item xs={isPhone ? 2 : 4}>
           <img className={classes.avatar} src={Avatar} alt="profile" />
         </Grid>
-        <Grid item xs={9} m={3}>
+        <Grid item xs={9} m={3} sx={{ textAlign: 'center'}}>
           <p>
             asdasdasd asdasdasda asdasdasdas ddsdsdsdsds dsdsdsd sd sd sds
             asdasd asdsadsa asdasdasdas assaddasd asdasdasdas asdasdas a sdsadas
